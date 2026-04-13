@@ -1,4 +1,4 @@
-package com.example.tarea1.config;
+package com.example.practica.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

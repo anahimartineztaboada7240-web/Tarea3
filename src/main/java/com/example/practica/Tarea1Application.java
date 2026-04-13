@@ -1,4 +1,4 @@
-package com.example.tarea1;
+package com.example.practica;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

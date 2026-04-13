@@ -1,4 +1,4 @@
-package com.example.tarea1.model;
+package com.example.practica.controller;
 
 public class Pelicula {
 

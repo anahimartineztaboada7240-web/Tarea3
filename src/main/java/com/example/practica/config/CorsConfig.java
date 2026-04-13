@@ -1,4 +1,4 @@
-package com.example.tarea1.config;
+package com.example.practica.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,8 +17,7 @@ public class CorsConfig {
                         .allowedOrigins(
                                 "http://localhost:4200",
                                 "https://*.ngrok.io",
-                                "https://*.ngrok-free.app",
-                                "https://practica2emergentes-6.onrender.com"
+                                "https://*.ngrok-free.app"
                         )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")

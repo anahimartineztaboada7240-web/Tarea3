@@ -1,7 +1,5 @@
-package com.example.tarea1.controller;
+package com.example.practica.controller;
 
-import com.example.tarea1.model.Pelicula;
-import com.example.tarea1.service.PeliculaService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,8 +19,6 @@ public class PeliculaController {
         return peliculaService.obtenerTodas();
     }
 
-    // ejemplo de endpoint con parametros --->
-    // http://localhost:8080/peliculas/filtrar?titulo=Inception&anio=2010
     @GetMapping("/filtrar")
     public List<Pelicula> filtrar(
             @RequestParam(required = false) String genero,
@@ -34,6 +30,7 @@ public class PeliculaController {
     public Pelicula agregar(@RequestBody Pelicula pelicula) {
         return peliculaService.agregar(pelicula);
     }
+
     @PutMapping("/{id}")
     public Pelicula actualizar(@PathVariable Long id, @RequestBody Pelicula pelicula) {
         return peliculaService.actualizar(id, pelicula);
