@@ -21,17 +21,12 @@ public class PeliculaController {
         return peliculaService.obtenerTodas();
     }
 
-
-    //ejemplo de endpoint con parametros ---> http://localhost:8080/peliculas/filtrar?titulo=Inception&anio=2010
-    @GetMapping("/{id}")
-    public Pelicula obtenerPorId(@PathVariable Long id) {
-        return peliculaService.buscarPorId(id);
-    }
+    // ejemplo de endpoint con parametros --->
+    // http://localhost:8080/peliculas/filtrar?titulo=Inception&anio=2010
     @GetMapping("/filtrar")
     public List<Pelicula> filtrar(
-        @RequestParam(required = false) String genero,
-        @RequestParam(required = false) Integer anio
-    ) {
+            @RequestParam(required = false) String genero,
+            @RequestParam(required = false) Integer anio) {
         return peliculaService.obtenerConFiltros(genero, anio);
     }
 
@@ -39,9 +34,14 @@ public class PeliculaController {
     public Pelicula agregar(@RequestBody Pelicula pelicula) {
         return peliculaService.agregar(pelicula);
     }
+    @PutMapping("/{id}")
+    public Pelicula actualizar(@PathVariable Long id, @RequestBody Pelicula pelicula) {
+        return peliculaService.actualizar(id, pelicula);
+    }
 
-    @DeleteMapping("/peliculas/{id}")
-    public void eliminar(@PathVariable Long id) {
-        peliculaService.eliminar(id);
+    @DeleteMapping("/{id}")
+    public String eliminar(@PathVariable Long id) {
+        boolean eliminado = peliculaService.eliminar(id);
+        return eliminado ? "Película eliminada" : "Película no encontrada";
     }
 }
